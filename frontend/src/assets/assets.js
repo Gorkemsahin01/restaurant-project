@@ -59,10 +59,10 @@ import profile_icon from './profile_icon.png'
 import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
-import Lokaldeyiz from './Lokaldeyiz-logo.png'
+import lokaldeyiz from './Lokaldeyiz-logo.png'
 
 export const assets = {
-  Lokaldeyiz,
+  lokaldeyiz,
   logo,
   basket_icon,
   header_img,

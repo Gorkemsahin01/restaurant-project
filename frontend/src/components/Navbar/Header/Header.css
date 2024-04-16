@@ -1,0 +1,49 @@
+.header{
+  height: 34vw;
+  margin: 30px auto;
+  background:url('/header_img.png') no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.header-content{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+  max-width: 50%;
+  bottom: 10%;
+  left: 60px; 
+  animation: fadeIn 3s;
+}
+
+.header-content h2{
+  font-family: 500;
+  color: aliceblue;
+  font-size: max(4.5vw,22px);
+}
+
+.header-content p{
+  color: white;
+  font-size: 20px;
+}
+
+.header-content button{
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 100px;
+  background-color: #4C43CD;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
