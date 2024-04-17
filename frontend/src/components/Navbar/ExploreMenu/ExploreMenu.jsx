@@ -17,7 +17,7 @@ function ExploreMenu  ({category,setCategory}) {
           )
         })}
       </div>
-      <hr />
+      <hr/>
     </div>
   )
 }

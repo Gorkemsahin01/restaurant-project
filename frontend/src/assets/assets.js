@@ -86,7 +86,7 @@ export const assets = {
 
 export const menu_list = [
   {
-    menu_name: 'Salad',
+    menu_name: 'Salata',
     menu_image: menu_1,
   },
   {
@@ -94,7 +94,7 @@ export const menu_list = [
     menu_image: menu_2,
   },
   {
-    menu_name: 'Deserts',
+    menu_name: 'Tatlı',
     menu_image: menu_3,
   },
   {
@@ -126,7 +126,7 @@ export const food_list = [
     image: food_1,
     price: 12,
     description: 'Food provides essential nutrients for overall health and well-being',
-    category: 'Salad',
+    category: 'Salata',
   },
   {
     _id: '2',
@@ -134,7 +134,7 @@ export const food_list = [
     image: food_2,
     price: 18,
     description: 'Food provides essential nutrients for overall health and well-being',
-    category: 'Salad',
+    category: 'Salata',
   },
   {
     _id: '3',
@@ -142,7 +142,7 @@ export const food_list = [
     image: food_3,
     price: 16,
     description: 'Food provides essential nutrients for overall health and well-being',
-    category: 'Salad',
+    category: 'Salata',
   },
   {
     _id: '4',
@@ -150,7 +150,7 @@ export const food_list = [
     image: food_4,
     price: 24,
     description: 'Food provides essential nutrients for overall health and well-being',
-    category: 'Salad',
+    category: 'Salata',
   },
   {
     _id: '5',
@@ -190,7 +190,7 @@ export const food_list = [
     image: food_9,
     price: 14,
     description: 'Food provides essential nutrients for overall health and well-being',
-    category: 'Deserts',
+    category: 'Tatlı',
   },
   {
     _id: '10',
@@ -198,7 +198,7 @@ export const food_list = [
     image: food_10,
     price: 22,
     description: 'Food provides essential nutrients for overall health and well-being',
-    category: 'Deserts',
+    category: 'Tatlı',
   },
   {
     _id: '11',
@@ -206,7 +206,7 @@ export const food_list = [
     image: food_11,
     price: 10,
     description: 'Food provides essential nutrients for overall health and well-being',
-    category: 'Deserts',
+    category: 'Tatlı',
   },
   {
     _id: '12',
@@ -214,7 +214,7 @@ export const food_list = [
     image: food_12,
     price: 12,
     description: 'Food provides essential nutrients for overall health and well-being',
-    category: 'Deserts',
+    category: 'Tatlı',
   },
   {
     _id: '13',
