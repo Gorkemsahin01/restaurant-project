@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
 import './Card.css'
 import { StoreContext } from '../../context/StoreContext'
+import { useNavigate } from 'react-router-dom'
 
 const Card = () => {
+  const { cardItems, food_list, removeFromCard, getTotalCardAmount, tableNumber, getTableNumber } = useContext(StoreContext)
 
-  const{cardItems,food_list,removeFromCard}=useContext(StoreContext)
-
+  const navigate = useNavigate()
 
   return (
-    <div className='card'>
+    <div className="card">
       <div className="card-item">
         <div className="card-item-title">
           <p>Resim</p>
@@ -21,20 +22,21 @@ const Card = () => {
         <br />
         <hr />
 
-        {food_list.map((item,index)=>{
-          if(cardItems[item._id]>0){
-            return(
+        {food_list.map((item, index) => {
+          if (cardItems[item._id] > 0) {
+            return (
               <div>
-              <div className='card-item-title card-item-item'>
-              <img src={item.image} alt="" />
-              <p>{item.name}</p>
-              <p>{item.price}₺</p>
-              <p>{cardItems[item._id]}</p>
-              <p>{item.price*cardItems[item._id]}₺</p>
-              <p onClick={()=>removeFromCard(item._id)} className='cross'>X</p>
-               
-              </div>
-              <hr />
+                <div className="card-item-title card-item-item">
+                  <img src={item.image} alt="" />
+                  <p>{item.name}</p>
+                  <p>{item.price}₺</p>
+                  <p>{cardItems[item._id]}</p>
+                  <p>{item.price * cardItems[item._id]}₺</p>
+                  <p onClick={() => removeFromCard(item._id)} className="cross">
+                    X
+                  </p>
+                </div>
+                <hr />
               </div>
             )
           }
@@ -45,37 +47,32 @@ const Card = () => {
             <h2>Toplam Ücretiniz</h2>
             <div>
               <div className="card-total-details">
-                   <p>Toplam</p>
-                   <p>{0}</p>
+                <p>Toplam</p>
+                <p>{getTotalCardAmount()}₺</p>
               </div>
               <hr />
               <div className="card-total-details">
-                <p>Delivery fee</p>
-                <p>{2}</p>
+                <p>İndirim Oranı</p>
+                <p>${getTotalCardAmount() === 0 ? 0 : 2}</p>
               </div>
               <hr />
               <div className="card-total-details">
-                 <p>Toplam </p>
-                 <b>{0}</b>
+                <p>Toplam </p>
+                <b>{getTotalCardAmount() === 0 ? 0 : getTotalCardAmount() - 2}₺</b>
               </div>
-            
             </div>
-            <button>proced to checkout
-
-            </button>
+            <button onClick={() => navigate('/order')}>Ödeme İşlemine Geçiniz</button>
           </div>
-          <div className='card-table'>
+          <div className="card-table">
             <div>
-              <p>Masa Numarası Giriniz</p>
-              <div className="cart-tablr-input">
-                <input type="text" placeholder='Masa Numarası' />
-                <button>Gönder</button>
+              <h2>İndirim Kodunuz Varsa Giriniz</h2>
+              <div className="card-table-input">
+                <input type="text" placeholder="Masa Numarası" />
+                <button onClick={() => getTableNumber(document.querySelector('.card-table-input input').value)}>Gönder</button>
               </div>
             </div>
           </div>
-       
         </div>
-        
       </div>
     </div>
   )

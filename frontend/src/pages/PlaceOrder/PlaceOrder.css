@@ -1,0 +1,30 @@
+.place-holder{
+  display: flex;
+  align-items: start;
+   justify-content: space-between;
+   gap: 50px  ;
+   margin-top: 100px;
+}
+
+.place-holder-left{
+  width: 100%;
+  max-width: max(30%,500px);
+}
+
+.place-order-left img{
+ width: 500px;
+ height: 350px;
+}
+
+.place-order-right{
+  width: 100%;
+  max-width: max(40%,500px);
+}
+.place-holder .card-total button{
+margin-top: 30px;
+}
+.place-holder .card-total button:hover{
+  background-color: seagreen;
+}
+
+
