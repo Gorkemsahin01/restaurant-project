@@ -6,12 +6,21 @@ import Card from './pages/Card/Card'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import Footer from './components/Navbar/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false)
+
+  const handleLoginSuccess = (name) => {
+    setUsername(name)
+    setShowLogin(false)
+    toast.success(`Hoş geldiniz, ${name}`)
+  }
   return (
     <>
-      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
+      <ToastContainer />
+      {showLogin ? <LoginPopup setShowLogin={setShowLogin} onSuccess={handleLoginSuccess} /> : <></>}
       <div className="app">
         <Navbar setShowLogin={setShowLogin} />
 
