@@ -4,25 +4,31 @@ import { createContext, useEffect, useState } from 'react'
 export const StoreContext = createContext(null)
 
 const StoreContextProvider = (props) => {
-  const [cardItems, setCardItems] = useState({})
+  const [cardItems, setcardItems] = useState({})
   const [tableNumber, setTableNumber] = useState('')
   const url = 'http://localhost:4000'
   const [token, setToken] = useState('')
   const [food_list, setFoodlist] = useState([])
 
-  const addToCard = (itemId) => {
+  const addTocard = async (itemId) => {
     if (!cardItems[itemId]) {
-      setCardItems((prev) => ({ ...prev, [itemId]: 1 }))
+      setcardItems((prev) => ({ ...prev, [itemId]: 1 }))
     } else {
-      setCardItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
+      setcardItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
+    }
+    if (token) {
+      await axios.post(url + '/api/card/add', { itemId }, { headers: { token } })
     }
   }
 
-  const removeFromCard = (itemId) => {
-    setCardItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+  const removeFromcard = async (itemId) => {
+    setcardItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+    if (token) {
+      await axios.post(url + '/api/card/remove', { itemId }, { headers: { token } })
+    }
   }
 
-  const getTotalCardAmount = () => {
+  const getTotalcardAmount = () => {
     let totalAmount = 0
     for (const item in cardItems) {
       if (cardItems[item] > 0) {
@@ -33,10 +39,15 @@ const StoreContextProvider = (props) => {
     return totalAmount
   }
 
-  const feetchFoodList = async () => {
+  const fetchFoodList = async () => {
     const response = await axios.get(url + '/api/food/list')
     setFoodlist(response.data.data)
   }
+
+  // const loadcardData = async (token) => {
+  //   const response = await axios.post(url + '/api/card/get', {}, { headers: { token } })
+  //   setcardItems(response.data.cardData)
+  // }
 
   const getTableNumber = (number) => {
     setTableNumber(number)
@@ -44,9 +55,10 @@ const StoreContextProvider = (props) => {
 
   useEffect(() => {
     async function loadData() {
-      await feetchFoodList()
+      await fetchFoodList()
       if (localStorage.getItem('token')) {
         setToken(localStorage.getItem('token'))
+        // await loadcardData(localStorage.getItem('token'))
       }
     }
     loadData()
@@ -55,10 +67,10 @@ const StoreContextProvider = (props) => {
   const contextValue = {
     food_list,
     cardItems,
-    setCardItems,
-    addToCard,
-    removeFromCard,
-    getTotalCardAmount,
+    setcardItems,
+    addTocard,
+    removeFromcard,
+    getTotalcardAmount,
     tableNumber,
     getTableNumber,
     url,

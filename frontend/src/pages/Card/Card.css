@@ -1,61 +1,62 @@
-.card{
+.card {
   margin-top: 100px;
 }
-.card-item-title{
+.card-item-title {
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
   align-items: center;
   color: gray;
-  font-size: max(1vw,12px);
+  font-size: max(1vw, 12px);
 }
 
-.card-item-item{
+.card-item-item {
   margin: 10px 0px;
   color: black;
 }
-.card-item-item img{
+.card-item-item img {
   width: 50px;
 }
 
-.card hr{
+.card hr {
   height: 1px;
   background-color: #e2e2e2;
   border: none;
 }
 
-.card-item-item .cross{
- cursor: pointer;
+.card-item-item .cross {
+  cursor: pointer;
 }
-.card-bottom{
+.card-bottom {
   margin-top: 80px;
   display: flex;
   justify-content: space-between;
-  gap: max(12vw,20px);
+  gap: max(12vw, 20px);
 }
-.card-total{
+.card-total {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px ;
+  gap: 20px;
 }
 
-.card-total-details{
+.card-total-details {
   display: flex;
   justify-content: space-between;
   color: #555;
 }
 
-.card-total hr{
+.card-total hr {
   margin: 10px 0px;
 }
 
-.card-total button{
-  width:max(15vw,200px) ;
+.card-total button {
+  width: max(15vw, 200px);
   color: #fff;
   padding: 15px 25px;
   border-radius: 100px;
-  background-color: #4C43CD;
-  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  background-color: #4c43cd;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%),
+    radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
   box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   font-size: 16px;
@@ -67,36 +68,33 @@
   transition: 0.3s;
 }
 
-
-.card-table{
+.card-table {
   display: flex;
 }
 
-.card-table p{
+.card-table p {
   font-size: 20px;
 }
 
-.card-table-input{
-
+.card-table-input {
   margin-top: 15px;
   font-size: large;
- 
 }
 
-.card-table input{
+.card-table input {
   border-radius: 15px;
   padding: 10px;
   border: 1px solid cadetblue;
   margin-right: 10px;
 }
 
-.card-table button{
-
+.card-table button {
   color: #fff;
   padding: 15px 25px;
   border-radius: 100px;
-  background-color: #4C43CD;
-  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  background-color: #4c43cd;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%),
+    radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
   box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   font-size: 16px;
@@ -108,13 +106,11 @@
   transition: 0.3s;
 }
 
-
-@media (max-width:750px) {
-  .card-bottom{
+@media (max-width: 750px) {
+  .card-bottom {
     flex-direction: column-reverse;
   }
-  .card-table{
+  .card-table {
     justify-content: start;
   }
-  
 }

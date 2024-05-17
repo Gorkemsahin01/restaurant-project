@@ -3,8 +3,8 @@ import './Card.css'
 import { StoreContext } from '../../context/StoreContext'
 import { useNavigate } from 'react-router-dom'
 
-const Card = () => {
-  const { cardItems, food_list, removeFromCard, getTotalCardAmount, tableNumber, getTableNumber, url } = useContext(StoreContext)
+const card = () => {
+  const { cardItems, food_list, removeFromcard, getTotalcardAmount, tableNumber, getTableNumber, url } = useContext(StoreContext)
 
   const navigate = useNavigate()
 
@@ -25,14 +25,14 @@ const Card = () => {
         {food_list.map((item, index) => {
           if (cardItems[item._id] > 0) {
             return (
-              <div>
+              <div key={item._id}>
                 <div className="card-item-title card-item-item">
                   <img src={url + 'images/' + item.image} alt="" />
                   <p>{item.name}</p>
                   <p>{item.price}₺</p>
                   <p>{cardItems[item._id]}</p>
                   <p>{item.price * cardItems[item._id]}₺</p>
-                  <p onClick={() => removeFromCard(item._id)} className="cross">
+                  <p onClick={() => removeFromcard(item._id)} className="cross">
                     X
                   </p>
                 </div>
@@ -48,17 +48,17 @@ const Card = () => {
             <div>
               <div className="card-total-details">
                 <p>Toplam</p>
-                <p>{getTotalCardAmount()}₺</p>
+                <p>{getTotalcardAmount()}₺</p>
               </div>
               <hr />
               <div className="card-total-details">
                 <p>İndirim Oranı</p>
-                <p>${getTotalCardAmount() === 0 ? 0 : 2}</p>
+                <p>${getTotalcardAmount() === 0 ? 0 : 2}</p>
               </div>
               <hr />
               <div className="card-total-details">
                 <p>Toplam </p>
-                <b>{getTotalCardAmount() === 0 ? 0 : getTotalCardAmount() - 2}₺</b>
+                <b>{getTotalcardAmount() === 0 ? 0 : getTotalcardAmount() - 2}₺</b>
               </div>
             </div>
             <button onClick={() => navigate('/order')}>Ödeme İşlemine Geçiniz</button>
@@ -78,4 +78,4 @@ const Card = () => {
   )
 }
 
-export default Card
+export default card

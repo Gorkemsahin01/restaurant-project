@@ -7,7 +7,7 @@ import { StoreContext } from '../../context/StoreContext'
 function Navbar({ setShowLogin }) {
   const [menu, setMenu] = useState('home')
 
-  const { getTotalCardAmount, token, setToken } = useContext(StoreContext)
+  const { getTotalcardAmount, token, setToken } = useContext(StoreContext)
 
   const navigate = useNavigate()
 
@@ -31,9 +31,7 @@ function Navbar({ setShowLogin }) {
         <a href="#explore-menu" onClick={() => setMenu('menu')} className={menu === 'menu' ? 'active' : ''}>
           Menü
         </a>
-        <a href="#app-dowland" onClick={() => setMenu('mobile-app')} className={menu === 'mobile-app' ? 'active' : ''}>
-          Mobile-app
-        </a>
+
         <a href="#footer" onClick={() => setMenu('contact')} className={menu === 'contact' ? 'active' : ''}>
           İletişim
         </a>
@@ -45,7 +43,7 @@ function Navbar({ setShowLogin }) {
             {' '}
             <img src={assets.basket_icon} alt="" />
           </Link>
-          <div className={getTotalCardAmount() === 0 ? '' : 'dot'}></div>
+          <div className={getTotalcardAmount() === 0 ? '' : 'dot'}></div>
         </div>
         {!token ? (
           <button onClick={() => setShowLogin(true)}>Admin Paneli</button>
