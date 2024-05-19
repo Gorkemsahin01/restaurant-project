@@ -72,4 +72,28 @@ const verifyOrder = async (req, res) => {
   }
 }
 
-export { placeOrder, verifyOrder }
+// Müşteri Sipariş
+
+const userOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find({ userId: req.body.userId })
+    res.json({ success: true, data: orders })
+  } catch (error) {
+    console.log(error)
+    res.json({ success: false, message: 'Error' })
+  }
+}
+
+// siparişleri admin için düzenleme
+
+const listOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find({})
+    res.json({ success: true, data: orders })
+  } catch (error) {
+    console.log(error)
+    res.json({ successfalse, message: 'Error' })
+  }
+}
+
+export { placeOrder, verifyOrder, userOrders, listOrders }
